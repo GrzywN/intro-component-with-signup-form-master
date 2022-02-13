@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Intro component with sign up form</title>
+    <script src="./js/app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="sign-up">
+        <div class="sign-up__head">
+          <h1 class="sign-up__header">Learn to code by watching others</h1>
+          <p class="sign-up__p">
+            See how experienced developers solve problems in real-time. Watching
+            scripted tutorials is great, but understanding how developers think
+            is invaluable.
+          </p>
+        </div>
+        <div class="sign-up__body">
+          <div class="sign-up__try-it">
+            <div class="sign-up__p">
+              <span class="sign-up__p--bold">Try it free 7 days</span> then
+              $20/mo. thereafter
+            </div>
+          </div>
+          <div class="sign-up__main">
+            <form
+              action="/"
+              method="post"
+              autocomplete="off"
+              enctype="text/plain"
+              class="sign-up__form"
+              id="sign-up__form"
+            >
+              <div class="sign-up__form-item sign-up__form-item--first-name">
+                <input
+                  type="text"
+                  name="first-name"
+                  placeholder="First Name"
+                  class="sign-up__form-input"
+                  data-valid="true"
+                />
+                <i class="sign-up__form-icon-error" data-valid="true"></i>
+                <label
+                  for="first-name"
+                  class="sign-up__form-label-error"
+                  data-valid="true"
+                  >First Name cannot be empty</label
+                >
+              </div>
+              <div class="sign-up__form-item sign-up__form-item--last-name">
+                <input
+                  type="text"
+                  name="last-name"
+                  placeholder="Last Name"
+                  class="sign-up__form-input"
+                  data-valid="true"
+                />
+                <i class="sign-up__form-icon-error" data-valid="true"></i>
+                <label
+                  for="last-name"
+                  class="sign-up__form-label-error"
+                  data-valid="true"
+                  >Last Name cannot be empty</label
+                >
+              </div>
+              <div class="sign-up__form-item sign-up__form-item--email">
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="Email Address"
+                  class="sign-up__form-input"
+                  data-valid="true"
+                />
+                <i class="sign-up__form-icon-error" data-valid="true"></i>
+                <label
+                  for="email"
+                  class="sign-up__form-label-error"
+                  data-valid="true"
+                  >Looks like this is not an email</label
+                >
+              </div>
+              <div class="sign-up__form-item sign-up__form-item--password">
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  class="sign-up__form-input"
+                  data-valid="true"
+                />
+                <i class="sign-up__form-icon-error" data-valid="true"></i>
+                <label
+                  for="password"
+                  class="sign-up__form-label-error"
+                  data-valid="true"
+                  >Password cannot be empty</label
+                >
+              </div>
+              <div class="sign-up__form-item">
+                <button class="sign-up__form-submit" data-submit>
+                  Claim your free trial
+                </button>
+              </div>
+            </form>
+            <p class="sign-up__tos">
+              By clicking the button, you are agreeing to our
+              <a href="#" class="sign-up__tos-a">Terms and Services</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

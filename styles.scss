@@ -1,0 +1,217 @@
+/* --Imports-- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* --Primary colors-- */
+
+$red: hsl(0, 100%, 74%);
+$green: hsl(154, 59%, 51%);
+
+/* --Accent colors-- */
+
+$blue: hsl(248, 32%, 49%);
+
+/* --Neutral colors-- */
+
+$dark-blue: hsl(249, 10%, 26%);
+$grayish-blue: hsl(246, 25%, 77%);
+$placeholder-clr: #6e6d76;
+
+/* --Fonts-- */
+$font-family: "Poppins", sans-serif;
+
+/* --CSS-- */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+body {
+  background-color: $red;
+  background-image: url(./images/bg-intro-desktop.png);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-up {
+  max-width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  &__head {
+    animation: signUpHeader 700ms ease-in-out;
+    display: grid;
+    justify-items: center;
+    gap: 1em;
+  }
+  &__header {
+    align-self: end;
+    font-size: 300%;
+    line-height: 100%;
+  }
+  &__p {
+    &--bold {
+      font-weight: 600;
+    }
+  }
+  &__body {
+    animation: signUpBody 800ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  &__try-it {
+    border-radius: 10px;
+    padding: 0.75em;
+    background-color: $blue;
+    text-align: center;
+    box-shadow: 0 0.5rem 0 rgba($color: #000000, $alpha: 0.2);
+    margin-bottom: 0.5rem;
+  }
+  &__main {
+    border-radius: 10px;
+    padding: 2em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    &-input {
+      padding: 1em 2em;
+      width: 100%;
+      outline: 1px solid $grayish-blue;
+      border: 0;
+      border-radius: 5px;
+      font-weight: 600;
+      color: $dark-blue;
+      position: relative;
+      &:focus {
+        outline: 1px solid $blue;
+        caret-color: $blue;
+      }
+      &[data-valid="false"] {
+        animation: errorOpacity 300ms ease-in;
+        color: $red;
+        outline: 2px solid $red;
+      }
+    }
+    &-icon-error {
+      display: none;
+      &[data-valid="false"] {
+        animation: errorOpacity 300ms ease-in;
+        display: inline;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-image: url(./images/icon-error.svg);
+        background-size: cover;
+        position: absolute;
+        transform: translate(calc(-100% - 1.5rem), 50%);
+      }
+    }
+    &-label-error {
+      display: none;
+      &[data-valid="false"] {
+        animation: errorOpacity 300ms ease-in;
+        display: flow-root;
+        font-size: 0.75em;
+        font-style: italic;
+        float: right;
+        color: $red;
+        text-align: right;
+      }
+    }
+    &-submit {
+      cursor: pointer;
+      color: white;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 0.75em;
+      width: 100%;
+      border: 0;
+      border-radius: 5px;
+      background-color: $green;
+      box-shadow: 0 0.25rem 0 #33ba7e;
+      transition: all 200ms ease;
+      &:hover {
+        box-shadow: 0 0.25rem 0 #6ccea3;
+        background-color: #77e2b3;
+      }
+      &:active {
+        box-shadow: none;
+        transform: translateY(0.25rem);
+      }
+    }
+  }
+
+  &__tos {
+    margin-top: 1.25rem;
+    font-size: 0.75em;
+    color: $grayish-blue;
+    text-align: center;
+    &-a {
+      text-decoration: none;
+      color: $red;
+      font-weight: bold;
+    }
+  }
+}
+
+::placeholder {
+  color: $placeholder-clr;
+  opacity: 1;
+}
+
+@media (max-width: 49.3125rem) {
+  body {
+    background-image: url(./images/bg-intro-mobile.png);
+  }
+  .sign-up {
+    text-align: center;
+    &__try-it {
+      padding-inline: 4.5rem;
+    }
+  }
+}
+
+@media (max-width: 31.5rem) {
+  body {
+    font-size: 10.5px;
+  }
+}
+@keyframes errorOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes signUpHeader {
+  0% {
+    transform: translateY(200%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes signUpBody {
+  0% {
+    transform: translateY(300%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

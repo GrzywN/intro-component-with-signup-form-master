@@ -1,0 +1,308 @@
+/* --Imports-- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+/* --Primary colors-- */
+/* --Accent colors-- */
+/* --Neutral colors-- */
+/* --Fonts-- */
+/* --CSS-- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #ff7a7a;
+  background-image: url(./images/bg-intro-desktop.png);
+  color: white;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sign-up {
+  max-width: 80vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+}
+
+.sign-up__head {
+  -webkit-animation: signUpHeader 700ms ease-in-out;
+          animation: signUpHeader 700ms ease-in-out;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  gap: 1em;
+}
+
+.sign-up__header {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  font-size: 300%;
+  line-height: 100%;
+}
+
+.sign-up__p--bold {
+  font-weight: 600;
+}
+
+.sign-up__body {
+  -webkit-animation: signUpBody 800ms ease-in-out;
+          animation: signUpBody 800ms ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1em;
+}
+
+.sign-up__try-it {
+  border-radius: 10px;
+  padding: 0.75em;
+  background-color: #6055a5;
+  text-align: center;
+  -webkit-box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.5rem;
+}
+
+.sign-up__main {
+  border-radius: 10px;
+  padding: 2em;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sign-up__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1em;
+}
+
+.sign-up__form-input {
+  padding: 1em 2em;
+  width: 100%;
+  outline: 1px solid #b9b6d3;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #3e3c49;
+  position: relative;
+}
+
+.sign-up__form-input:focus {
+  outline: 1px solid #6055a5;
+  caret-color: #6055a5;
+}
+
+.sign-up__form-input[data-valid="false"] {
+  -webkit-animation: errorOpacity 300ms ease-in;
+          animation: errorOpacity 300ms ease-in;
+  color: #ff7a7a;
+  outline: 2px solid #ff7a7a;
+}
+
+.sign-up__form-icon-error {
+  display: none;
+}
+
+.sign-up__form-icon-error[data-valid="false"] {
+  -webkit-animation: errorOpacity 300ms ease-in;
+          animation: errorOpacity 300ms ease-in;
+  display: inline;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url(./images/icon-error.svg);
+  background-size: cover;
+  position: absolute;
+  -webkit-transform: translate(calc(-100% - 1.5rem), 50%);
+          transform: translate(calc(-100% - 1.5rem), 50%);
+}
+
+.sign-up__form-label-error {
+  display: none;
+}
+
+.sign-up__form-label-error[data-valid="false"] {
+  -webkit-animation: errorOpacity 300ms ease-in;
+          animation: errorOpacity 300ms ease-in;
+  display: flow-root;
+  font-size: 0.75em;
+  font-style: italic;
+  float: right;
+  color: #ff7a7a;
+  text-align: right;
+}
+
+.sign-up__form-submit {
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.75em;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  background-color: #38cc8c;
+  -webkit-box-shadow: 0 0.25rem 0 #33ba7e;
+          box-shadow: 0 0.25rem 0 #33ba7e;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.sign-up__form-submit:hover {
+  -webkit-box-shadow: 0 0.25rem 0 #6ccea3;
+          box-shadow: 0 0.25rem 0 #6ccea3;
+  background-color: #77e2b3;
+}
+
+.sign-up__form-submit:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translateY(0.25rem);
+          transform: translateY(0.25rem);
+}
+
+.sign-up__tos {
+  margin-top: 1.25rem;
+  font-size: 0.75em;
+  color: #b9b6d3;
+  text-align: center;
+}
+
+.sign-up__tos-a {
+  text-decoration: none;
+  color: #ff7a7a;
+  font-weight: bold;
+}
+
+::-webkit-input-placeholder {
+  color: #6e6d76;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #6e6d76;
+  opacity: 1;
+}
+
+::-ms-input-placeholder {
+  color: #6e6d76;
+  opacity: 1;
+}
+
+::placeholder {
+  color: #6e6d76;
+  opacity: 1;
+}
+
+@media (max-width: 49.3125rem) {
+  body {
+    background-image: url(./images/bg-intro-mobile.png);
+  }
+  .sign-up {
+    text-align: center;
+  }
+  .sign-up__try-it {
+    padding-inline: 4.5rem;
+  }
+}
+
+@media (max-width: 31.5rem) {
+  body {
+    font-size: 10.5px;
+  }
+}
+
+@-webkit-keyframes errorOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes errorOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes signUpHeader {
+  0% {
+    -webkit-transform: translateY(200%);
+            transform: translateY(200%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes signUpHeader {
+  0% {
+    -webkit-transform: translateY(200%);
+            transform: translateY(200%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes signUpBody {
+  0% {
+    -webkit-transform: translateY(300%);
+            transform: translateY(300%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes signUpBody {
+  0% {
+    -webkit-transform: translateY(300%);
+            transform: translateY(300%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+/*# sourceMappingURL=styles.css.map */
