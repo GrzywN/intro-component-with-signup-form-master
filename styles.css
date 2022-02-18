@@ -141,8 +141,6 @@ body {
   display: inline;
   width: 1.5rem;
   height: 1.5rem;
-  background-image: url(./images/icon-error.svg);
-  background-size: cover;
   position: absolute;
   -webkit-transform: translate(calc(-100% - 1.5rem), 50%);
           transform: translate(calc(-100% - 1.5rem), 50%);

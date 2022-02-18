@@ -1,3 +1,5 @@
+const formItemElems = document.querySelectorAll(".sign-up__form-item > *");
+
 const firstNameElems = document.querySelectorAll(
   ".sign-up__form-item--first-name > *"
 );
@@ -43,34 +45,17 @@ formElem.addEventListener("submit", (event) => {
       e.dataset.valid = "false";
     });
   } else if (!passwordElems[0].value.match(passwdTemplate)) {
-    passwordElems[2].innerText =
-      "Input Password and Submit [6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter]";
+    passwordElems[2].innerText = "Password is invalid";
     passwordElems.forEach((e) => {
       e.dataset.valid = "false";
     });
   }
 });
 
-firstNameElems[0].addEventListener("click", () => {
-  firstNameElems.forEach((e) => {
-    e.dataset.valid = "true";
-  });
-});
-
-lastNameElems[0].addEventListener("click", () => {
-  lastNameElems.forEach((e) => {
-    e.dataset.valid = "true";
-  });
-});
-
-emailElems[0].addEventListener("click", () => {
-  emailElems.forEach((e) => {
-    e.dataset.valid = "true";
-  });
-});
-
-passwordElems[0].addEventListener("click", () => {
-  passwordElems.forEach((e) => {
-    e.dataset.valid = "true";
+formItemElems.forEach((e) => {
+  e.addEventListener("click", () => {
+    formItemElems.forEach((e) => {
+      e.dataset.valid = "true";
+    });
   });
 });
